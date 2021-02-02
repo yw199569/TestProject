@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "xH6pF2RuGrBlbWRpQK9NsiZRztg8KlMAAastUsSguAhX9xoVEzGIjCkEeqtXxbwVwmhl3RipZy/mRQz58mDvjw==",
+  "success": true,
+  "projectFilePath": "E:\\TestProject\\TestProject\\IdentityClient\\IdentityClient.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\weya\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.9\\microsoft.visualstudio.azure.containers.tools.targets.1.10.9.nupkg.sha512"
+  ],
+  "logs": []
+}

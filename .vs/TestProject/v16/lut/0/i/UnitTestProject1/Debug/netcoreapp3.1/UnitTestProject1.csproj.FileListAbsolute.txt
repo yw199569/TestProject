@@ -1,0 +1,14 @@
+E:\TestProject\TestProject\.vs\TestProject\v16\lut\0\b\UnitTestProject1\Debug\netcoreapp3.1\ConsoleApp1.exe
+E:\TestProject\TestProject\.vs\TestProject\v16\lut\0\b\UnitTestProject1\Debug\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+E:\TestProject\TestProject\.vs\TestProject\v16\lut\0\b\UnitTestProject1\Debug\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+E:\TestProject\TestProject\.vs\TestProject\v16\lut\0\b\UnitTestProject1\Debug\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+E:\TestProject\TestProject\.vs\TestProject\v16\lut\0\b\UnitTestProject1\Debug\netcoreapp3.1\UnitTestProject1.deps.json
+E:\TestProject\TestProject\.vs\TestProject\v16\lut\0\b\UnitTestProject1\Debug\netcoreapp3.1\UnitTestProject1.runtimeconfig.json
+E:\TestProject\TestProject\.vs\TestProject\v16\lut\0\b\UnitTestProject1\Debug\netcoreapp3.1\UnitTestProject1.runtimeconfig.dev.json
+E:\TestProject\TestProject\.vs\TestProject\v16\lut\0\b\UnitTestProject1\Debug\netcoreapp3.1\UnitTestProject1.dll
+E:\TestProject\TestProject\.vs\TestProject\v16\lut\0\i\UnitTestProject1\Debug\netcoreapp3.1\UnitTestProject1.csprojAssemblyReference.cache
+E:\TestProject\TestProject\.vs\TestProject\v16\lut\0\i\UnitTestProject1\Debug\netcoreapp3.1\UnitTestProject1.AssemblyInfoInputs.cache
+E:\TestProject\TestProject\.vs\TestProject\v16\lut\0\i\UnitTestProject1\Debug\netcoreapp3.1\UnitTestProject1.AssemblyInfo.cs
+E:\TestProject\TestProject\.vs\TestProject\v16\lut\0\i\UnitTestProject1\Debug\netcoreapp3.1\UnitTestProject1.csproj.CopyComplete
+E:\TestProject\TestProject\.vs\TestProject\v16\lut\0\i\UnitTestProject1\Debug\netcoreapp3.1\UnitTestProject1.dll
+E:\TestProject\TestProject\.vs\TestProject\v16\lut\0\i\UnitTestProject1\Debug\netcoreapp3.1\UnitTestProject1.genruntimeconfig.cache
