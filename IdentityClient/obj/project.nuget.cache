@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "xH6pF2RuGrBlbWRpQK9NsiZRztg8KlMAAastUsSguAhX9xoVEzGIjCkEeqtXxbwVwmhl3RipZy/mRQz58mDvjw==",
+  "dgSpecHash": "0mNZ0DCkaysJ+98aRWObaTTlXZ14n3aobeO6mn0WTPMRLKcPBDBcEPP7m5zrmgYHujFf1I7RH+jSx4IBGxvCKA==",
   "success": true,
-  "projectFilePath": "E:\\TestProject\\TestProject\\IdentityClient\\IdentityClient.csproj",
+  "projectFilePath": "/Users/yangwen/Documents/项目/TestProject/IdentityClient/IdentityClient.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\weya\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.9\\microsoft.visualstudio.azure.containers.tools.targets.1.10.9.nupkg.sha512"
+    "/Users/yangwen/.nuget/packages/microsoft.visualstudio.azure.containers.tools.targets/1.10.9/microsoft.visualstudio.azure.containers.tools.targets.1.10.9.nupkg.sha512"
   ],
   "logs": []
 }

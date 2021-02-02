@@ -19,11 +19,13 @@ namespace IdentityService
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddIdentityServer()
-                      .AddDeveloperSigningCredential()
-                      .AddTestUsers(InMemoryConfiguration.GetUsers().ToList())
-                      .AddInMemoryClients(InMemoryConfiguration.GetClients())
-                      .AddInMemoryApiResources(InMemoryConfiguration.GetApiResources());
+            services.AddIdentityServer()//Ids4服务
+                   .AddDeveloperSigningCredential()//添加开发人员签名凭据
+                   .AddTestUsers(InMemoryConfiguration.Users().ToList())
+                   .AddInMemoryIdentityResources(InMemoryConfiguration.GetIdentityResources()) //添加内存apiresource
+                   .AddInMemoryApiResources(InMemoryConfiguration.GetApiResources())
+                   .AddInMemoryApiScopes(InMemoryConfiguration.GetApiScopes())
+                   .AddInMemoryClients(InMemoryConfiguration.GetClients());//把配置文件的Client配置资源放到内存
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -32,7 +34,7 @@ namespace IdentityService
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                
+
             }
             app.UseRouting();
             app.UseIdentityServer();
@@ -42,8 +44,8 @@ namespace IdentityService
                 endpoints.MapGet("/", async context =>
                 {
                     await context.Response.WriteAsync("Hello World!");
-                });                
-            });            
+                });
+            });
         }
     }
 }
