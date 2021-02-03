@@ -33,3 +33,8 @@ E:\TestProject\TestProject\IdentityService\obj\Debug\net5.0\IdentityService.dll
 E:\TestProject\TestProject\IdentityService\obj\Debug\net5.0\ref\IdentityService.dll
 E:\TestProject\TestProject\IdentityService\obj\Debug\net5.0\IdentityService.pdb
 E:\TestProject\TestProject\IdentityService\obj\Debug\net5.0\IdentityService.genruntimeconfig.cache
+E:\TestProject\TestProject\IdentityService\bin\Debug\net5.0\JWT.dll
+E:\TestProject\TestProject\IdentityService\bin\Debug\net5.0\IdentityModel.AspNetCore.OAuth2Introspection.dll
+E:\TestProject\TestProject\IdentityService\bin\Debug\net5.0\IdentityServer4.AccessTokenValidation.dll
+E:\TestProject\TestProject\IdentityService\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+E:\TestProject\TestProject\IdentityService\bin\Debug\net5.0\libman.json

@@ -1,4 +1,6 @@
-﻿using IdentityServer4.Models;
+﻿using IdentityModel;
+using IdentityServer4;
+using IdentityServer4.Models;
 using IdentityServer4.Test;
 using Microsoft.Extensions.Configuration;
 using System;
@@ -10,79 +12,69 @@ namespace IdentityService.Models
 {
     public class InMemoryConfiguration
     {
-        public static IConfiguration Configuration { get; set; }
-        /// <summary>
-        /// Define which APIs will use this IdentityServer
-        /// </summary>
-        /// <returns></returns>
+        public static IEnumerable<IdentityResource> GetIdentityResources()
+        {
+            return new List<IdentityResource>
+            {
+                new IdentityResources.OpenId(),
+                new IdentityResources.Profile(),
+            };
+        }
+
         public static IEnumerable<ApiResource> GetApiResources()
         {
-            return new[]
+            return new List<ApiResource>
             {
-                new ApiResource("clientservice", "CAS Client Service"),
-                new ApiResource("productservice", "CAS Product Service"),
-                new ApiResource("agentservice", "CAS Agent Service")
+                new ApiResource("api1", "第一个api接口")
+                {
+                    //!!!重要
+                    Scopes = { "scope1"}
+                },
             };
         }
 
-        /// <summary>
-        /// Define which Apps will use thie IdentityServer
-        /// </summary>
-        /// <returns></returns>
+        public static IEnumerable<ApiScope> GetApiScopes()
+        {
+            return new List<ApiScope>
+            {
+                new ApiScope("scope1"),
+            };
+        }
+
+        public static IEnumerable<TestUser> Users()
+        {
+            return new[]
+            {
+                new TestUser
+                {
+                    SubjectId = "1",
+                    Username = "mail@qq.com",
+                    Password = "password"
+                }
+            };
+        }
+
+        // clients want to access resources (aka scopes)
         public static IEnumerable<Client> GetClients()
         {
-            return new[]
+            return new List<Client>
             {
-               new Client
+                 new Client
                 {
-                    ClientId = "client.api.service",
-                    ClientSecrets = new [] { new Secret("clientsecret".Sha256()) },
+                    ClientId = "app",
+                    ClientSecrets = { new Secret("secret".Sha256()) },
                     AllowedGrantTypes = GrantTypes.ResourceOwnerPasswordAndClientCredentials,
-                    AllowedScopes = new [] { "clientservice" }
-                },
-                new Client
-                {
-                    ClientId = "product.api.service",
-                    ClientSecrets = new [] { new Secret("productsecret".Sha256()) },
-                    AllowedGrantTypes = GrantTypes.ResourceOwnerPasswordAndClientCredentials,
-                    AllowedScopes = new [] { "clientservice", "productservice" }
-                },
-                new Client
-                {
-                    ClientId = "agent.api.service",
-                    ClientSecrets = new [] { new Secret("agentsecret".Sha256()) },
-                    AllowedGrantTypes = GrantTypes.ResourceOwnerPasswordAndClientCredentials,
-                    AllowedScopes = new [] { "agentservice", "clientservice", "productservice" }
-                }
-            };
-        }
-
-        /// <summary>
-        /// Define which uses will use this IdentityServer
-        /// </summary>
-        /// <returns></returns>
-        public static IEnumerable<TestUser> GetUsers()
-        {
-            return new[]
-            {
-                new TestUser
-                {
-                    SubjectId = "10001",
-                    Username = "edison@hotmail.com",
-                    Password = "edisonpassword"
-                },
-                new TestUser
-                {
-                    SubjectId = "10002",
-                    Username = "test2@hotmail.com",
-                    Password = "test2password"
-                },
-                new TestUser
-                {
-                    SubjectId = "10003",
-                    Username = "test3@hotmail.com",
-                    Password = "test3password"
-                }
+                    AllowedScopes = new List<string>
+                    {
+                        IdentityServerConstants.StandardScopes.OpenId,
+                        IdentityServerConstants.StandardScopes.Profile,
+                        "scope1",
+                    },
+                    Claims=new List<ClientClaim>
+                    { 
+                    new ClientClaim(JwtClaimTypes.FamilyName,"123")
+                    }
+                 }
             };
         }
     }

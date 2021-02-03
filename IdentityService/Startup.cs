@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using IdentityServer4;
 using IdentityService.Models;
 using IdentityService.Common;
-
+using IdentityServer4.AccessTokenValidation;
 namespace IdentityService
 {
     public class Startup
@@ -23,11 +23,19 @@ namespace IdentityService
             {
                 options.Filters.Add<TokenFilter>();//添加自定义的过滤器
             });
-            services.AddIdentityServer()
-                      .AddDeveloperSigningCredential()
-                      .AddTestUsers(InMemoryConfiguration.GetUsers().ToList())
-                      .AddInMemoryClients(InMemoryConfiguration.GetClients())
-                      .AddInMemoryApiResources(InMemoryConfiguration.GetApiResources());
+            services.AddIdentityServer()//Ids4服务
+                 .AddDeveloperSigningCredential()//添加开发人员签名凭据
+                 .AddTestUsers(InMemoryConfiguration.Users().ToList())
+                 .AddInMemoryIdentityResources(InMemoryConfiguration.GetIdentityResources()) //添加内存apiresource
+                 .AddInMemoryApiResources(InMemoryConfiguration.GetApiResources())
+                 .AddInMemoryApiScopes(InMemoryConfiguration.GetApiScopes())
+                 .AddInMemoryClients(InMemoryConfiguration.GetClients());//把配置文件的Client配置资源放到内存
+
+            services.AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)//添加验证
+                .AddJwtBearer(options =>
+                {
+                    options.Authority = "https://localhost:5001";
+                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
