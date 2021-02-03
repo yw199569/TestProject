@@ -9,6 +9,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using IdentityServer4;
 using IdentityService.Models;
+using IdentityService.Common;
 
 namespace IdentityService
 {
@@ -18,7 +19,10 @@ namespace IdentityService
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllers(options=>
+            {
+                options.Filters.Add<TokenFilter>();//添加自定义的过滤器
+            });
             services.AddIdentityServer()
                       .AddDeveloperSigningCredential()
                       .AddTestUsers(InMemoryConfiguration.GetUsers().ToList())
