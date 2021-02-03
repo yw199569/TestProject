@@ -83,7 +83,7 @@ namespace IdentityService.Common
             //    TokenErrorJson(context, "Token不匹配");
             //    return;
             //}
-         Dictionary<string,object> dic= JsonConvert.DeserializeObject<Dictionary<string,object>>(ValidateJwtToken(authorizationHeader, "secret"));
+            Dictionary<string, object> dic = JsonConvert.DeserializeObject<Dictionary<string, object>>(ValidateJwtToken(authorizationHeader, "secret"));
             //DateTime CheckTime =Convert.ToDateTime(UnixExp);
             //if (CheckTime < DateTime.Now)
             //{
@@ -95,7 +95,7 @@ namespace IdentityService.Common
         {
             context.HttpContext.Response.StatusCode = 200;
             context.HttpContext.Response.ContentType = "application/json";
-            JsonResult result = new JsonResult(new {msg= errorMsg });//设置返回字段
+            JsonResult result = new JsonResult(new { msg = errorMsg });//设置返回字段
             context.Result = result;
         }
 

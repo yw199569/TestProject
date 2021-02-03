@@ -11,6 +11,10 @@ using IdentityServer4;
 using IdentityService.Models;
 using IdentityService.Common;
 using IdentityServer4.AccessTokenValidation;
+using Swashbuckle.AspNetCore.Swagger;
+using System.IO;
+using Microsoft.OpenApi.Models;
+
 namespace IdentityService
 {
     public class Startup
@@ -19,23 +23,55 @@ namespace IdentityService
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers(options=>
+            services.AddControllers(options =>
             {
-                options.Filters.Add<TokenFilter>();//Ìí¼Ó×Ô¶¨ÒåµÄ¹ıÂËÆ÷
+                options.Filters.Add<TokenFilter>();//ï¿½ï¿½ï¿½ï¿½Ô¶ï¿½ï¿½ï¿½Ä¹ï¿½ï¿½ï¿½ï¿½ï¿½
             });
-            services.AddIdentityServer()//Ids4·şÎñ
-                 .AddDeveloperSigningCredential()//Ìí¼Ó¿ª·¢ÈËÔ±Ç©ÃûÆ¾¾İ
-                 .AddTestUsers(InMemoryConfiguration.Users().ToList())
-                 .AddInMemoryIdentityResources(InMemoryConfiguration.GetIdentityResources()) //Ìí¼ÓÄÚ´æapiresource
-                 .AddInMemoryApiResources(InMemoryConfiguration.GetApiResources())
-                 .AddInMemoryApiScopes(InMemoryConfiguration.GetApiScopes())
-                 .AddInMemoryClients(InMemoryConfiguration.GetClients());//°ÑÅäÖÃÎÄ¼şµÄClientÅäÖÃ×ÊÔ´·Åµ½ÄÚ´æ
+            services.AddIdentityServer()//Ids4ï¿½ï¿½ï¿½ï¿½
+                    .AddDeveloperSigningCredential()//ï¿½ï¿½Ó¿ï¿½ï¿½ï¿½ï¿½ï¿½Ô±Ç©ï¿½ï¿½Æ¾ï¿½ï¿½
+                    .AddTestUsers(InMemoryConfiguration.Users().ToList())
+                    .AddInMemoryIdentityResources(InMemoryConfiguration.GetIdentityResources()) //ï¿½ï¿½ï¿½ï¿½Ú´ï¿½apiresource
+                    .AddInMemoryApiResources(InMemoryConfiguration.GetApiResources())
+                    .AddInMemoryApiScopes(InMemoryConfiguration.GetApiScopes())
+                    .AddInMemoryClients(InMemoryConfiguration.GetClients());//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½Clientï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô´ï¿½Åµï¿½ï¿½Ú´ï¿½
 
-            services.AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)//Ìí¼ÓÑéÖ¤
+            services.AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)//ï¿½ï¿½ï¿½ï¿½ï¿½Ö¤
                 .AddJwtBearer(options =>
                 {
                     options.Authority = "https://localhost:5001";
                 });
+            services.AddSwaggerGen(c =>
+                {
+                    c.SwaggerDoc("v1", new OpenApiInfo
+                    {
+                        Title = "My API",
+                        Version = "V1",
+                        Description = "API for rey",
+                        Contact = new OpenApiContact() { Name = "rey", Email = "yw199569@qq.com" }
+                    });
+                    var basePath = Path.GetDirectoryName(typeof(Program).Assembly.Location);
+                    var xmx = Path.Combine(basePath, "IdentityService.xml");
+                    c.IncludeXmlComments(xmx);//æ·»åŠ swaggeræ³¨é‡Š
+                    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                    {
+                        Description = "Please enter into field the word 'Bearer' followed by a space and the JWT value",
+                        Name = "Authorization",//httpè¯·æ±‚çš„
+                        In = ParameterLocation.Header,//æ ‡è®°ä»å“ªä¸ªåœ°æ–¹ä¼ å…¥éªŒè¯
+                        Type = SecuritySchemeType.ApiKey//åŠ å¯†ç±»å‹
+                    });
+                    c.AddSecurityRequirement(new OpenApiSecurityRequirement
+                    {
+                        { new OpenApiSecurityScheme
+        {
+            Reference = new OpenApiReference()
+            {
+                Id = "Bearer",
+                Type = ReferenceType.SecurityScheme//ä¼ å…¥ç±»å‹
+            }
+        }, Array.Empty<string>() }
+                    });
+                });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -44,18 +80,25 @@ namespace IdentityService
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                
+
             }
             app.UseRouting();
             app.UseIdentityServer();
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "my api");
+
+            });
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
                 endpoints.MapGet("/", async context =>
                 {
                     await context.Response.WriteAsync("Hello World!");
-                });                
-            });            
+                });
+            });
+
         }
     }
 }

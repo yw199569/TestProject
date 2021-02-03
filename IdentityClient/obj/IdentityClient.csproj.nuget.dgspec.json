@@ -1,33 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "E:\\TestProject\\TestProject\\IdentityClient\\IdentityClient.csproj": {}
+    "/Users/yangwen/Documents/项目/TestProject/IdentityClient/IdentityClient.csproj": {}
   },
   "projects": {
-    "E:\\TestProject\\TestProject\\IdentityClient\\IdentityClient.csproj": {
+    "/Users/yangwen/Documents/项目/TestProject/IdentityClient/IdentityClient.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\TestProject\\TestProject\\IdentityClient\\IdentityClient.csproj",
+        "projectUniqueName": "/Users/yangwen/Documents/项目/TestProject/IdentityClient/IdentityClient.csproj",
         "projectName": "IdentityClient",
-        "projectPath": "E:\\TestProject\\TestProject\\IdentityClient\\IdentityClient.csproj",
-        "packagesPath": "C:\\Users\\weya\\.nuget\\packages\\",
-        "outputPath": "E:\\TestProject\\TestProject\\IdentityClient\\obj\\",
+        "projectPath": "/Users/yangwen/Documents/项目/TestProject/IdentityClient/IdentityClient.csproj",
+        "packagesPath": "/Users/yangwen/.nuget/packages/",
+        "outputPath": "/Users/yangwen/Documents/项目/TestProject/IdentityClient/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\weya\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "/Users/yangwen/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "http://192.168.74.58:8083/nuget": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -49,6 +44,10 @@
             "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
               "target": "Package",
               "version": "[1.10.9, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[5.6.3, )"
             }
           },
           "imports": [
@@ -69,7 +68,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.102/RuntimeIdentifierGraph.json"
         }
       }
     }
