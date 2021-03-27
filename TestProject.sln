@@ -7,9 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp1", "..\ConsoleAp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTestProject1", "..\UnitTestProject1\UnitTestProject1.csproj", "{9B2D2DEA-A5A3-430C-91F5-025A56F6C4C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityService", "IdentityService\IdentityService.csproj", "{D635F585-00D0-4010-B0B2-2AB129B1B23A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityService", "IdentityService\IdentityService.csproj", "{D635F585-00D0-4010-B0B2-2AB129B1B23A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityClient", "IdentityClient\IdentityClient.csproj", "{0A6FB3D9-82FB-4D9D-9AAE-7FD8CE46B702}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityClient", "IdentityClient\IdentityClient.csproj", "{0A6FB3D9-82FB-4D9D-9AAE-7FD8CE46B702}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityIOC", "IdentityIOC\IdentityIOC.csproj", "{88580E00-2E4F-4C1F-83F5-98AA5117651A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{0A6FB3D9-82FB-4D9D-9AAE-7FD8CE46B702}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A6FB3D9-82FB-4D9D-9AAE-7FD8CE46B702}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A6FB3D9-82FB-4D9D-9AAE-7FD8CE46B702}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88580E00-2E4F-4C1F-83F5-98AA5117651A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88580E00-2E4F-4C1F-83F5-98AA5117651A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88580E00-2E4F-4C1F-83F5-98AA5117651A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88580E00-2E4F-4C1F-83F5-98AA5117651A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
