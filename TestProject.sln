@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityService", "Identity
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityClient", "IdentityClient\IdentityClient.csproj", "{0A6FB3D9-82FB-4D9D-9AAE-7FD8CE46B702}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityIOC", "IdentityIOC\IdentityIOC.csproj", "{88580E00-2E4F-4C1F-83F5-98AA5117651A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityIOC", "IdentityIOC\IdentityIOC.csproj", "{88580E00-2E4F-4C1F-83F5-98AA5117651A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

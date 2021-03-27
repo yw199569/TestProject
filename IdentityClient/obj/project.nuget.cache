@@ -1,10 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "oFRYX2wWF4gpFl+88L6rqUjufbcl3zfbrfnNRC3YyFwqfwLD8i+pC7D7ljDLYKNgYxD29xhd3rkPjrDN2VIS+Q==",
+  "dgSpecHash": "kt0goCMtU8P7bLAcy84pP/8xE3aKZ0jjphw6VghS+R4ItsoNfouDWv4ftfQF7vNPIuM7iabgtCd1T5QTm5V+ow==",
   "success": true,
   "projectFilePath": "E:\\TestProject\\TestProject\\IdentityClient\\IdentityClient.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\weya\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.9\\microsoft.visualstudio.azure.containers.tools.targets.1.10.9.nupkg.sha512"
+    "C:\\Users\\weya\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\weya\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\weya\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.9\\microsoft.visualstudio.azure.containers.tools.targets.1.10.9.nupkg.sha512",
+    "C:\\Users\\weya\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
+    "C:\\Users\\weya\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
+    "C:\\Users\\weya\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.6.3\\swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
+    "C:\\Users\\weya\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\5.6.3\\swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512"
   ],
   "logs": []
 }
